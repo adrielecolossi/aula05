@@ -1,0 +1,62 @@
+/*  * {         /* o Asterisco significa que é para todos */
+
+/*   font-size: 20pt;    */ /*pt é ponto*/
+
+/*}          assim. todos receberiam font-size:20pt;*/
+
+h1{
+    font-size:35pt;
+    text-align: center;
+    /*família de fontes locais*/
+    font-family: "Open Sans", Arial, Tahoma, sans-serif;
+   font-family: 'Ribeye', cursive;
+    /*se não tiver Open Sans, vai tentar Arial, se não tiver Arial vai tentar Tahoma e se não tiver Tahoma vai botar qualquer sans-serif*/
+    /*colocamos aspas pra Open Sans porque se não ele acha que é Open(abrir) Sans*/
+   font-weight: lighter;
+}
+
+h1:hover{
+    color: pink;
+    text-transform: uppercase;
+}
+
+h2{
+  font-size:30pt;
+  font-family: cursive;
+  font-weight: lighter; /*peso da fonte */
+
+}
+
+h3{
+    font-size:25pt;
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(139,55,55);
+    /*deslocamento em x deslocamento em y desfoque cor*/
+    text-shadow: 5px 5px 10px grey;
+}
+
+
+
+
+p#primeiro{
+   font-family:"Times New Roman"; /*Se o nome estiver errado, ele vai usar a padrão do browser*/
+   font-style:italic;
+
+}
+
+/*se colocarmos só p{  vai para todos os p*/
+
+p:nth-of-type(2){   /*enésimo do tipo(n=2) */
+
+        color: darkred;
+        text-align: justify;
+}
+
+span.sublinhado{  /*spans com a class sublinhado*/
+    text-decoration:underline;
+}
+
+a{ /*tirar o sublinhado do link*/
+
+text-decoration= none;
+}

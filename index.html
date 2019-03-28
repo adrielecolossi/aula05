@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+    <!--anotamos link: css e botamos o nome do documento(no lugar onde esta index.css)-->
+
+
+
+</head>
+
+<body>
+
+    <!--h1+h2+h3 gera os 3 com um enter só-->
+    <!--
+    monoespaçado:   é o mesmo espaço sempre
+      iiii
+      mmmm
+
+ocupam o mesmo espaço -->
+    <!--Tipografia: A grafia do tipo
+Cada fonte tem sua família, no css não botamos a fonte, mas sim a família em que está
+
+pagina 267 do livro HTML&CSS:Design and Build Web Sites
+
+--Serif--
+
+Serif: ex TimesNewRoman, Bookman etc
+As fontes que tiverem um "pézinho" no final da letra
+
+Sans-Serif: ex Arial
+
+Estudos dizem que fontes com serif são melhores para jornais etc enquanto sans-serif é boa para lermos na tela
+
+
+--O tamanho da Fonte--
+
+Temos baseline(line the letters sit on), x-height(height of the letter x). Há também ascender, cap height e descender que tratam
+de por exemplo The xyz, o T tem um tamanho diferente do h que por sua vez tem um tamanho diferente do y, com sua 'perninha'
+
+*O logo do If usa a fonte open-sans
+-->
+
+    <h1>Título do documento</h1>
+    <h2>Subtítulo</h2>
+    <h3>Terceiro nível</h3>
+
+    <a href="#">Link para lugar nenhum</a>
+
+    <p id="primeiro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, ipsa quibusdam rerum, rem saepe
+        eos
+        voluptatum cumque esse quia quas vero vitae. Fuga blanditiis eaque, dignissimos perferendis eum dolores
+        consectetur.</p>
+    <p>A, eaque ipsa quibusdam ab porro cum recusandae<span class="sublinhado"> atque asperiores modi nesciunt
+            consectetur </span>spnulla qui? Illum,
+        cupiditate impedit laboriosam ipsam autem nesciunt aspernatur officiis nam praesentium illo quas, pariatur
+        culpa!</p>
+    <p>Illum voluptates doloribus excepturi vel dolorum ut quos. Provident voluptas molestiae alias? Debitis repudiandae
+        distinctio culpa nemo commodi facilis placeat, omnis fugit? Aperiam consectetur sequi, pariatur consequatur at
+        sapiente accusamus.</p>
+
+    <!--podemos usar a tag span n vezes no texto
+
+        span significa lacuna -->
+
+    <script>
+
+        /*function trimLeft(txt){
+
+       }
+      é a mesma coisa que
+      const trimLeft= function(txt){
+
+    };
+
+ */
+
+        /*
+         function trimLeft(txt){
+             let r='';
+             let copy= false;
+             for(let i=0;i<txt.length;i++){
+                if(copy || txt[i] != ' '){
+                copy=true;
+                r+=txt.charAt(i);
+                }
+            }
+         return r;
+        }
+        console.log(trimLeft('   teste')); //teste
+        */
+
+        function trimLeft() {
+            console.log(this);
+            let r = '';
+            let copy = false;
+            for (let i = 0; i < this.txt.length; i++) {
+                if (copy || this.txt[i] != ' ') {
+                    copy = true;
+                    r += this.txt.charAt(i);
+                }
+
+            }
+            return r;
+        }
+        //console.log(trimLeft('   teste')); //teste
+
+        /*
+        txt= '   fora da funcao'
+        "   fora da funcao"
+        trimLeft()
+       "fora da funcao"
+        *pois trim() é o browser*/
+
+        const o = {
+            nome: 'teste',
+            txt: '   um texto   ',
+           tleft: trimLeft
+           //o.tleft executará o trimLeft
+           //O o passou a ser o this
+           //assim como temos "MARCIO".toUpperCase() em que "MARCIO" passou a ser o nosso this
+           // nesse caso o o passou a ser this
+
+        };
+
+
+  //podemos usar trimLeft.call(o)
+  //para definirmos quem é o nosso this
+
+  //chamando a função trimLeft no contexto o(o sera this)
+  trimLeft.call(o)
+
+
+
+/*
+nome.toUpperCase() //"MARCIO"
+nome['toUpperCase']() //"MARCIO"
+String.prototype.toUpperCase
+  */
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>
