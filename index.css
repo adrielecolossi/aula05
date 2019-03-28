@@ -60,3 +60,7 @@ a{ /*tirar o sublinhado do link*/
 
 text-decoration= none;
 }
+
+p:last-of-type{
+    line-height:20ptS
+}
